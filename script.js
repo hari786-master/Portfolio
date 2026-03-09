@@ -139,6 +139,16 @@ document.addEventListener('DOMContentLoaded', () => {
       link: "https://hari786-master.github.io/Digital-Tool-Kit/"
     },
     {
+      title: "Hand Cricket",
+      category: "Game",
+      description: "A fun Hand Cricket game built using Java that simulates the classic hand cricket concept with simple game logic and interactive gameplay.",
+      color: "linear-gradient(135deg, #dc2626, #f59e0b)",
+      tags: ["Java", "Fun"],
+      language: "Java",
+      image: "images/hand-cricket.png",
+      github: "https://github.com/hari786-master/Hand-Cricket"
+    },
+    {
       title: "Bank Application",
       category: "Financial System",
       description: "A digital banking system designed to handle account management, money transfers, and transaction tracking efficiently and securely.",
