@@ -637,10 +637,11 @@ img { max-width: 100%; display: block; }
 }
 
 .photo-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40%;
+    margin-left: 1rem;
 }
 
 .floating-badge {
@@ -978,7 +979,7 @@ img { max-width: 100%; display: block; }
   background: #f3f4f6;
   padding: 0.35rem;
   border-radius: 2rem;
-  margin: 0 auto 3rem auto;
+  margin: 3rem auto 3rem auto;
   position: relative;
   display: flex;
   flex-wrap: wrap;
