@@ -7,7 +7,34 @@ window.addEventListener('beforeunload', () => {
   sessionStorage.setItem('scrollY', window.scrollY);
 });
 
+// Scroll Indicator visibility toggle
+window.addEventListener('scroll', () => {
+  const scrollIndicator = document.getElementById('scrollIndicator');
+  if (scrollIndicator) {
+    if (window.scrollY > 50) {
+      scrollIndicator.classList.add('hidden');
+    } else {
+      scrollIndicator.classList.remove('hidden');
+    }
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  // --- THEME TOGGLE ---
+  const themeToggle = document.getElementById('themeToggle');
+
+  const applyTheme = (dark) => {
+    document.body.classList.toggle('dark', dark);
+  };
+
+  // Load saved preference
+  applyTheme(localStorage.getItem('theme') === 'dark');
+
+  themeToggle?.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
 
   // --- 0. SKELETON LOADER ---
   // Scroll the skeleton itself to where the user was before reload
@@ -354,7 +381,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Filter tab clicks
   const filterTabs = document.getElementById('filterTabs');
-  filterTabs.addEventListener('click', (e) => {
+  const filterIndicator = document.getElementById('filterIndicator');
+
+  function updateFilterIndicator(btn) {
+    if (!filterIndicator || !btn) return;
+    const rect = btn.getBoundingClientRect();
+    const parentRect = filterTabs.getBoundingClientRect();
+    filterIndicator.style.width = `${rect.width}px`;
+    filterIndicator.style.transform = `translate3d(${rect.left - parentRect.left}px, 0, 0)`;
+  }
+
+  // Initial indicator position (small delay to ensure layout is ready)
+  setTimeout(() => {
+    const activeBtn = filterTabs?.querySelector('.filter-btn.active');
+    if (activeBtn) updateFilterIndicator(activeBtn);
+  }, 200);
+
+  filterTabs?.addEventListener('click', (e) => {
     const btn = e.target.closest('.filter-btn');
     if (!btn) return;
 
@@ -364,7 +407,13 @@ document.addEventListener('DOMContentLoaded', () => {
     activeFilter = filter;
     filterTabs.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+    updateFilterIndicator(btn);
     renderProjects(filter);
+  });
+
+  window.addEventListener('resize', () => {
+    const activeBtn = filterTabs?.querySelector('.filter-btn.active');
+    if (activeBtn) updateFilterIndicator(activeBtn);
   });
 
 
@@ -397,6 +446,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function startTechCarousel() {
     techTimer = setInterval(nextTechSlide, 5000);
+  }
+
+  const techCarousel = document.getElementById('techCarousel');
+  if (techCarousel) {
+    techCarousel.addEventListener('mouseenter', () => clearInterval(techTimer));
+    techCarousel.addEventListener('mouseleave', () => startTechCarousel());
   }
 
   if (techDots.length > 0) {
