@@ -139,6 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
       link: "https://hari786-master.github.io/Digital-Tool-Kit/"
     },
     {
+      title: "Expense Tracker",
+      category: "Web Application",
+      description: "A user-friendly expense tracking application designed to help individuals manage their personal finances effectively. Users can easily record income and expenses, categorize transactions, and gain valuable insights into their spending habits through simple visualizations and reports.",
+      color: "linear-gradient(135deg, #2563eb, #06b6d4)",
+      tags: ["OM"],
+      language: "OM",
+      image: "images/expense.png",
+    },
+    {
       title: "Hand Cricket",
       category: "Game",
       description: "A fun Hand Cricket game built using Java that simulates the classic hand cricket concept with simple game logic and interactive gameplay.",
