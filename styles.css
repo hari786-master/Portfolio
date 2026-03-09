@@ -462,7 +462,88 @@ img { max-width: 100%; display: block; }
 
 @keyframes floatSlow {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-30px); }
+  50% { transform: translate(0, -10px); }
+}
+
+/* Hero Floating Social Icons */
+.hero-floating-icon {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: white;
+  border: 1px solid #f3f4f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  z-index: 3;
+  transition: all 0.3s ease;
+  color: #1a1a2e;
+  opacity: 0;
+}
+
+.hero-floating-icon:hover {
+  transform: scale(1.1) rotate(5deg) !important;
+  box-shadow: 0 8px 25px rgba(202, 79, 23, 0.2);
+  color: #ca4f17;
+}
+
+.github-icon {
+  top: 0PX;
+  left: 93px;
+  animation: popInBadge 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s forwards, pulseRotate 4s ease-in-out infinite 1.5s;
+}
+
+.codewars-icon {
+  bottom: -39px;
+  right: 100px;
+  animation: popInBadge 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.8s forwards, pulseRotateopp 4.2s ease-in-out infinite 1.8s;
+}
+
+@keyframes pulseRotate {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulseRotateopp {
+  0%, 100% {
+    transform: translateY(-5px);
+  }
+  25% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(0);
+  }
+}
+
+.codewars-icon svg {
+  color: #F05656;
+}
+
+/* Dark mode support */
+body.dark .hero-floating-icon {
+  background: #1c1c28;
+  border-color: #2d2d3d;
+  color: #f3f4f6;
+}
+
+body.dark .hero-floating-icon:hover {
+  color: #ca4f17;
 }
 
 .hero-content {
