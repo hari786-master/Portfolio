@@ -195,14 +195,14 @@ document.addEventListener('DOMContentLoaded', () => {
   typeWriter();
 
   // --- 3. SCROLL PROGRESS ---
-  const scrollProgress = document.getElementById('scrollProgress');
+  // const scrollProgress = document.getElementById('scrollProgress');
 
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (scrollTop / docHeight) * 100;
-    scrollProgress.style.width = progress + '%';
-  });
+  // window.addEventListener('scroll', () => {
+  //   const scrollTop = window.scrollY;
+  //   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  //   const progress = (scrollTop / docHeight) * 100;
+  //   scrollProgress.style.width = progress + '%';
+  // });
 
   // --- 4. FAB (Floating Action Button) ---
   const fab = document.getElementById('fab');
