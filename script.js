@@ -385,9 +385,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateFilterIndicator(btn) {
     if (!filterIndicator || !btn) return;
-    const { offsetWidth, offsetLeft } = btn;
+    const { offsetWidth, offsetHeight, offsetLeft, offsetTop } = btn;
     filterIndicator.style.width = `${offsetWidth}px`;
-    filterIndicator.style.transform = `translate3d(${offsetLeft}px, 0, 0)`;
+    filterIndicator.style.height = `${offsetHeight}px`;
+    filterIndicator.style.transform = `translate3d(${offsetLeft}px, ${offsetTop}px, 0)`;
   }
 
   // Initial indicator position (small delay to ensure layout is ready)

@@ -261,7 +261,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
+  z-index: 100;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -483,8 +483,13 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 1024px) { 
+  .hero { padding-top: 8rem; }
   .hero-grid > :first-child { order: 2; }
-  .hero-grid > :last-child { order: 1; }
+  .hero-grid > :last-child {
+    order: 1;
+    margin-top: 3rem; 
+  }
+  .hero-photo { margin-bottom: 2rem; }
   
   .hero-text {
     text-align: center;
@@ -863,6 +868,7 @@ img { max-width: 100%; display: block; }
   position: absolute;
   top: 0;
   left: 0;
+  height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -970,20 +976,17 @@ img { max-width: 100%; display: block; }
 /* --- FILTER TABS (NAV BAR STYLE) --- */
 .filter-tabs {
   background: #f3f4f6;
-  padding: 0.35rem 0.8rem;
-  border-radius: 100px;
-  gap: 0;
+  padding: 0.35rem;
+  border-radius: 2rem;
   margin: 0 auto 3rem auto;
   position: relative;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width: fit-content;
+  max-width: 95vw;
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-  white-space: nowrap;
-  max-width: 95vw;
-  overflow-x: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   z-index: 10;
 }
 
@@ -994,16 +997,14 @@ img { max-width: 100%; display: block; }
 /* The sliding background pill */
 .filter-nav-indicator {
   position: absolute;
-  top: 0.35rem;
+  top: 0;
   left: 0;
-  height: calc(100% - 0.7rem);
   background: #ca4f17;
   border-radius: 100px;
-  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), width 0.4s cubic-bezier(0.19, 1, 0.22, 1), height 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   box-shadow: none;
   z-index: 0;
   pointer-events: none;
-  transform: translate3d(0, 0, 0);
 }
 
 .filter-btn {
