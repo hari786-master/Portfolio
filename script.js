@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     window.addEventListener('load', () => setTimeout(hideSkeleton, 500));
     // Fallback in case load takes too long
-    setTimeout(hideSkeleton, 5000); 
+    setTimeout(hideSkeleton, 5000);
   }
 
   // --- PROJECT DATA ---
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Task Management System",
       description: "A web-based task management system that helps users organize, track, and manage their daily tasks efficiently. Built with Node.js and EJS, it features a responsive interface for creating, updating, and monitoring tasks in a simple and user-friendly way.",
       color: "linear-gradient(135deg, #dc2626, #f59e0b)",
-      tags: ["EJS", "CSS","Nodejs", "Responsive"],
+      tags: ["EJS", "CSS", "Nodejs", "Responsive"],
       language: "Nodejs",
       image: "images/task.png",
       github: "https://github.com/hari786-master/Task-Management-Node",
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Planetary System",
       description: "A visually stunning planetary system explorer built with EJS, CSS, and JavaScript. Users can explore detailed information about each planet, view high-quality images, and learn about their unique characteristics.",
       color: "linear-gradient(135deg, #2563eb, #06b6d4)",
-      tags: ["EJS", "CSS","Nodejs","Responsive"],
+      tags: ["EJS", "CSS", "Nodejs", "Responsive"],
       language: "Nodejs",
       image: "images/the-planets.png",
       github: "https://github.com/hari786-master/The-Planet",
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Web Application",
       description: "A powerful all-in-one digital toolkit that helps users complete everyday online tasks quickly with simple, efficient, and user-friendly tools.",
       color: "linear-gradient(135deg, #2563eb, #06b6d4)",
-      tags: ["HTML", "CSS","Javascript", "Responsive"],
+      tags: ["HTML", "CSS", "Javascript", "Responsive"],
       language: "Javascript",
       image: "images/toolkit.png",
       github: "https://github.com/hari786-master/Digital-Tool-Kit",
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
       color: "linear-gradient(135deg, #2563eb, #06b6d4)",
       tags: ["OM"],
       language: "OM",
-      image: "images/expenses.png",
+      image: "images/expenses.jpg",
     },
     {
       title: "Hand Cricket",
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Financial System",
       description: "A digital banking system designed to handle account management, money transfers, and transaction tracking efficiently and securely.",
       color: "linear-gradient(135deg, #ca4f17, #9facb9)",
-      tags: ["HTML", "CSS","OOP JavaScript"],
+      tags: ["HTML", "CSS", "OOP JavaScript"],
       language: "Javascript",
       image: "images/bank.png",
       github: "https://github.com/hari786-master/Bank",
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Gallery",
       description: "A digital gallery built with HTML, CSS, and JavaScript, featuring a modern and responsive design.",
       color: "linear-gradient(135deg, #4f46e5, #7c3aed)",
-      tags: ["HTML", "CSS", "Javascript","Responsive"],
+      tags: ["HTML", "CSS", "Javascript", "Responsive"],
       language: "Javascript",
       image: "images/gallery.png",
       github: "https://github.com/hari786-master/Gallery",
@@ -190,12 +190,12 @@ document.addEventListener('DOMContentLoaded', () => {
       github: "https://github.com/hari786-master/Redmagic",
       link: "https://hari786-master.github.io/REDMAGIC/"
     },
-     {
+    {
       title: "Ram Nath Kovind",
       category: "Portfolio Site",
       description: "A tribute webpage created for former President Ram Nath Kovind. This project was developed collaboratively with a class of 30 members and completed within a single day, focusing on clean design, responsive layout, and structured implementation.",
       color: "linear-gradient(135deg, #ec4899, #f43f5e)",
-      tags: ["Group Project", "HTML", "CSS","Responsive"],
+      tags: ["Group Project", "HTML", "CSS", "Responsive"],
       language: "Html",
       image: "images/ramnath.png",
       github: "https://github.com/hari786-master/Ram-Nath-Kovindh",
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Game",
       description: "A fun and fast-paced game where a cat collects bananas while trying to escape from a chasing dragon. Players must move quickly, gather as many bananas as possible, and avoid getting caught in this exciting adventure.",
       color: "linear-gradient(135deg, #eab308, #f97316)",
-      tags:  ["Scratch","Game", "Animation"],
+      tags: ["Scratch", "Game", "Animation"],
       language: "Scratch",
       image: "images/banana.png",
       link: "https://scratch.mit.edu/projects/1182922719"
@@ -237,13 +237,13 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Interactive Game",
       description: "An interactive drawing pad that lets users create colorful drawings using simple controls. Built with Scratch, it encourages creativity by allowing users to draw, experiment with shapes, and explore basic interactive programming concepts.",
       color: "linear-gradient(135deg, #eab308, #f97316)",
-      tags:  ["Scratch","Drawing", "Interactive", "Creative"],
+      tags: ["Scratch", "Drawing", "Interactive", "Creative"],
       language: "Scratch",
       image: "images/drawingpad.png",
       link: "https://scratch.mit.edu/projects/1188582822"
     },
   ];
-  
+
   // --- 1. TYPEWRITER EFFECT ---
   const roles = ['DEVELOPER', 'Coder', 'Tech Builder', 'Platform Developer'];
   let roleIndex = 0;
@@ -525,7 +525,7 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const currentId = entry.target.id;
-        
+
         navLinks.forEach(link => {
           link.classList.remove('active');
           if (link.getAttribute('href') === `#${currentId}`) {
@@ -654,5 +654,44 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 4000);
     }
   });
+
+  // --- 15. CODEWARS DATA FETCHING ---
+  const cwUsername = 'Hariharasuthan';
+
+  async function fetchCodewarsStats() {
+    const usernameEl = document.getElementById('cw-username');
+    const rankEl = document.getElementById('cw-rank');
+    const honorEl = document.getElementById('cw-honor');
+    const leaderboardEl = document.getElementById('cw-leaderboard');
+    const completedEl = document.getElementById('cw-completed');
+    const badgeLink = document.getElementById('cw-badge-link');
+    const badgeImg = badgeLink?.querySelector('img');
+    const socialLink = document.getElementById('cw-social-link');
+
+    if (!cwUsername) return;
+
+    try {
+      const response = await fetch(`https://www.codewars.com/api/v1/users/${cwUsername}`);
+      if (!response.ok) throw new Error('User not found');
+
+      const data = await response.json();
+
+      if (usernameEl) usernameEl.textContent = data.username;
+      if (rankEl) rankEl.textContent = data.ranks.overall.name;
+      if (honorEl) honorEl.textContent = data.honor.toLocaleString();
+      if (leaderboardEl) leaderboardEl.textContent = data.leaderboardPosition ? '#' + data.leaderboardPosition.toLocaleString() : 'N/A';
+      if (completedEl) completedEl.textContent = data.codeChallenges.totalCompleted.toLocaleString();
+
+      if (badgeLink) badgeLink.href = `https://www.codewars.com/users/${cwUsername}`;
+      if (badgeImg) badgeImg.src = `https://www.codewars.com/users/${cwUsername}/badges/large`;
+      if (socialLink) socialLink.href = `https://www.codewars.com/users/${cwUsername}`;
+
+    } catch (error) {
+      console.error('Codewars fetch error:', error);
+      if (usernameEl) usernameEl.textContent = 'User Not Found';
+    }
+  }
+
+  fetchCodewarsStats();
 
 });
