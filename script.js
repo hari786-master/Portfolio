@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
       color: "linear-gradient(135deg, #2563eb, #06b6d4)",
       tags: ["OM"],
       language: "OM",
-      image: "images/expense.png",
+      image: "images/expenses.png",
     },
     {
       title: "Hand Cricket",
