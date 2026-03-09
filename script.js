@@ -385,10 +385,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateFilterIndicator(btn) {
     if (!filterIndicator || !btn) return;
-    const rect = btn.getBoundingClientRect();
-    const parentRect = filterTabs.getBoundingClientRect();
-    filterIndicator.style.width = `${rect.width}px`;
-    filterIndicator.style.transform = `translate3d(${rect.left - parentRect.left}px, 0, 0)`;
+    const { offsetWidth, offsetLeft } = btn;
+    filterIndicator.style.width = `${offsetWidth}px`;
+    filterIndicator.style.transform = `translate3d(${offsetLeft}px, 0, 0)`;
   }
 
   // Initial indicator position (small delay to ensure layout is ready)
