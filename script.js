@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Travel",
       description: "Trip Pilot is a comprehensive travel planning platform designed to simplify trip planning and make travel more organized and enjoyable. It provides users with tools to discover destinations, plan itineraries, manage bookings, and track expenses, all in one convenient location.",
       color: "linear-gradient(135deg, #2563eb, #06b6d4)",
-      tags: ["OM", "Nodejs", "Expense Tracking"],
+      tags: ["OM", "Nodejs", "Group Project"],
       language: "OM",
       image: "images/trippilot.png",
       github: "https://github.com/hari786-master/Trip-Pilot",
@@ -170,6 +170,17 @@ document.addEventListener('DOMContentLoaded', () => {
       image: "images/redmagic.jpg",
       github: "https://github.com/hari786-master/Redmagic",
       link: "https://hari786-master.github.io/REDMAGIC/"
+    },
+     {
+      title: "Ram Nath Kovind",
+      category: "Portfolio Site",
+      description: "A tribute webpage created for former President Ram Nath Kovind. This project was developed collaboratively with a class of 30 members and completed within a single day, focusing on clean design, responsive layout, and structured implementation.",
+      color: "linear-gradient(135deg, #ec4899, #f43f5e)",
+      tags: ["Group Project", "HTML", "CSS","Responsive"],
+      language: "Html",
+      image: "images/ramnath.png",
+      github: "https://github.com/hari786-master/Ram-Nath-Kovindh",
+      link: "https://hari786-master.github.io/Ram-Nath-Kovindh/"
     },
     {
       title: "Fylo",
