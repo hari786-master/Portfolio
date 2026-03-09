@@ -604,7 +604,7 @@ img { max-width: 100%; display: block; }
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ca4f17, #9facb9);
+  background: linear-gradient(153deg, #ca4f17, #b8866f);
   padding: 4px;
   box-shadow: 0 25px 60px rgba(202, 79, 23, 0.1);
   position: relative;
