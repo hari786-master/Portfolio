@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   
   // --- 1. TYPEWRITER EFFECT ---
-  const roles = ['DEVELOPER', 'Coder', 'Tech Builder', 'Full-Stack Builder'];
+  const roles = ['DEVELOPER', 'Coder', 'Tech Builder', 'Platform Developer'];
   let roleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
@@ -167,7 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function typeWriter() {
     const currentRole = roles[roleIndex];
-
     if (!isDeleting) {
       typewriterEl.textContent = currentRole.substring(0, charIndex + 1);
       charIndex++;
