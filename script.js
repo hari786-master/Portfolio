@@ -2,8 +2,37 @@
 // PORTFOLIO - SCRIPT.JS
 // Typewriter, Filter, Carousel, Cursor, Scroll
 // =============================================
+// Save scroll position before page unloads
+window.addEventListener('beforeunload', () => {
+  sessionStorage.setItem('scrollY', window.scrollY);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  // --- 0. SKELETON LOADER ---
+  // Scroll the skeleton itself to where the user was before reload
+  const savedScrollY = parseInt(sessionStorage.getItem('scrollY') || '0', 10);
+  const loader = document.getElementById('skeletonLoader');
+  if (loader && savedScrollY > 0) {
+    loader.scrollTop = savedScrollY;
+  }
+
+  // --- 0. SKELETON LOADER ---
+  const hideSkeleton = () => {
+    const loader = document.getElementById('skeletonLoader');
+    if (loader) {
+      loader.classList.add('hidden');
+      setTimeout(() => loader.remove(), 500);
+    }
+  };
+
+  if (document.readyState === 'complete') {
+    setTimeout(hideSkeleton, 500); // Add a tiny delay so the animation is visible briefly
+  } else {
+    window.addEventListener('load', () => setTimeout(hideSkeleton, 500));
+    // Fallback in case load takes too long
+    setTimeout(hideSkeleton, 5000); 
+  }
 
   // --- PROJECT DATA ---
   const projects = [
